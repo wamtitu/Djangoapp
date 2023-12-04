@@ -43,9 +43,9 @@ COSMOSDB = {
 SECRET_KEY = 'django-insecure-@5-vmra4xp^r1%gw&%h)t3ao6&v5g@26lj@wok9%xrzn6r1%no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*","filemanager-0vp2.onrender.com", '0.0.0.0','localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -139,8 +139,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICfILES_STOROGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR/ 'static'
+# STATICfILES_STOROGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_ROOT = BASE_DIR/ 'static'
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
