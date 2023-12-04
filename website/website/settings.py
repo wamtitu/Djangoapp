@@ -45,7 +45,7 @@ SECRET_KEY = 'django-insecure-@5-vmra4xp^r1%gw&%h)t3ao6&v5g@26lj@wok9%xrzn6r1%no
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*','filemanager-0vp2.onrender.com', '0.0.0.0']
+ALLOWED_HOSTS = ["*","filemanager-0vp2.onrender.com", '0.0.0.0','localhost']
 
 
 # Application definition
@@ -62,9 +62,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -139,10 +139,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICfILES_STOROGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR/ 'files/static'
+STATICfILES_STOROGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR/ 'static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
