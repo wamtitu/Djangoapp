@@ -2,4 +2,4 @@ set -o errexit
 pip install -r requirements.txt
 
 python website/manage.py collectstatic --no-input
-python webiste/manage.py migrate
+python website/manage.py migrate
