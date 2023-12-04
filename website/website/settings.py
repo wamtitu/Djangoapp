@@ -29,6 +29,12 @@ AZURE_VAULT_ACCOUNT = env('AZURE_VAULT_ACCOUNT')
 AZURE_STORAGE_KEY_NAME = env('AZURE_STORAGE_KEY_NAME')
 AZURE_APP_BLOB_NAME = env('AZURE_APP_BLOB_NAME')
 
+COSMOSDB = {
+    'ENDPOINT': 'https://socials.documents.azure.com:443/',
+    'PRIMARY_KEY': 'WTejHFNzrU1C8Drqx7dJijNrVSYEQwEDj5x7iB9s0icQGZRmVQNqCOPZF71FTGAgpc1CAVtivWRFACDb2Q6tqQ==',
+    'DATABASE_NAME': 'MySocial',
+    'CONTAINER_NAME': 'TheSocialContaner',
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -37,9 +43,9 @@ AZURE_APP_BLOB_NAME = env('AZURE_APP_BLOB_NAME')
 SECRET_KEY = 'django-insecure-@5-vmra4xp^r1%gw&%h)t3ao6&v5g@26lj@wok9%xrzn6r1%no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['thesocials.azurewebsites.net']
 
 
 # Application definition
@@ -58,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -131,6 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICfILES_STOROGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR/ 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

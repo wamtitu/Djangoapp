@@ -10,23 +10,23 @@ from django.conf import settings
 from . import models
 
 
-ALLOWED_EXTENTIONS = ['.pdf','.doc','.docx']
+ALLOWED_EXTENTIONS = ['.jpg', '.jpeg', '.png',]
 
 def create_blob_client(file_name):
 
-    default_credential = DefaultAzureCredential()
+    # default_credential = DefaultAzureCredential()
 
-    secret_client = SecretClient(
-        vault_url=settings.AZURE_VAULT_ACCOUNT, credential=default_credential
-    )
+    # secret_client = SecretClient(
+        # vault_url=settings.AZURE_VAULT_ACCOUNT, credential=default_credential
+    # )
 
-    storage_credentials = secret_client.get_secret(name=settings.AZURE_STORAGE_KEY_NAME)
+    # storage_credentials = secret_client.get_secret(name=settings.AZURE_STORAGE_KEY_NAME)
 
     return BlobClient(
         account_url=settings.AZURE_STORAGE_ACCOUNT,
         container_name=settings.AZURE_APP_BLOB_NAME,
         blob_name=file_name,
-        credential=storage_credentials.value,
+        credential=settings.AZURE_STORAGE_KEY_NAME,
     )
 
 
