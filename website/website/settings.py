@@ -51,14 +51,13 @@ ALLOWED_HOSTS = ["*","filemanager-0vp2.onrender.com", '0.0.0.0','localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'files.apps.FilesConfig',
+    'files',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'files'
 ]
 
 MIDDLEWARE = [
